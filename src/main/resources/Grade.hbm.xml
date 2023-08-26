@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "org.example.Model.CourseModel.Grade" table = "GRADES">
+
+        <meta attribute = "class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <composite-id >
+            <key-property name="courseID" column="COURSE_ID" type="string"/>
+            <key-property name="studentID" column="STUDENT_ID" type="string"/>
+            <key-property name="description" column="GRADE_DESCRIPTION" type="string"/>
+        </composite-id>
+
+        <property name = "gradeValue" column = "GRADE" type = "double"/>
+
+    </class>
+</hibernate-mapping>

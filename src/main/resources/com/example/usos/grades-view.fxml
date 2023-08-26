@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.usos.GradesController"
+            prefHeight="$WINDOW_HEIGHT" prefWidth="$WINDOW_WIDTH">
+
+    <fx:define>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="600.0"/>
+        <Double fx:id="GRADES_TABLE"  fx:value="500"/>
+        <Double fx:id="WINDOW_WIDTH" fx:value="800.0"/>
+        <Double fx:id="RIGHT_SCROLL_PANE_WIDTH" fx:value="380"/>
+        <Double fx:id="LEFT_SCROLL_PANE_WIDTH" fx:value="390"/>
+        <Double fx:id="LEFT_SCROLL_PANE_HEIGHT" fx:value="250"/>
+    </fx:define>
+
+        <SplitPane prefWidth="$WINDOW_WIDTH" dividerPositions="0.4">
+        <AnchorPane>
+            <children>
+                <ScrollPane prefWidth="$LEFT_SCROLL_PANE_WIDTH">
+                <TableView fx:id="courseTable" prefWidth="$LEFT_SCROLL_PANE_WIDTH" prefHeight="$WINDOW_HEIGHT">
+                <columns>
+                    <TableColumn fx:id="courseNameColumn" text="Course name"/>
+                    <TableColumn fx:id="obligatoryColumn" text="Obligatory"/>
+                    <TableColumn fx:id="statusColumn" text="Your status"/>
+                </columns>
+            </TableView>
+                </ScrollPane>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane>
+            <children>
+                <VBox>
+                <ScrollPane prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+                    <TableView fx:id="gradesTable"  prefWidth="$RIGHT_SCROLL_PANE_WIDTH" prefHeight="$GRADES_TABLE">
+                        <columns>
+                            <TableColumn fx:id="descriptionColumn" text="Description"/>
+                            <TableColumn fx:id="gradeColumn" text="Grade" />
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+                    <Button fx:id="saveGradesButton" text="Save grades to CSV file" onAction="#onSaveGradesClick" prefWidth="$RIGHT_SCROLL_PANE_WIDTH"
+                    />
+                </VBox>
+            </children>
+        </AnchorPane>
+
+        </SplitPane>
+</AnchorPane>

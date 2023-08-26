@@ -1,0 +1,4 @@
+ID,Name,Coordinator,Obligatory,ECTS,Lecture hours,Classes hours
+C001,Computer Science,Alan Turing,true,4,30,30
+C002,Physics,Stephen Hawking,true,3,30,60
+C003,History of Warsaw,Taco Hemingway,false,2,45,30

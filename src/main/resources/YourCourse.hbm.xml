@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "org.example.Model.CourseModel.YourCourse" table = "YOURCOURSES">
+
+        <meta attribute = "class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <composite-id >
+            <key-property name="courseID" column="COURSE_ID" type="string"/>
+            <key-property name="groupID" column="GROUP_ID" type="string"/>
+        </composite-id>
+
+        <property name = "yourStatus" column = "STUDENT_STATUS" type = "int"/>
+
+    </class>
+</hibernate-mapping>

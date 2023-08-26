@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "org.example.Model.CourseModel.Course" table = "COURSES">
+
+        <meta attribute = "class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name = "courseID" type = "string" column = "COURSE_ID">
+            <generator class="native"/>
+        </id>
+
+        <property name = "courseName" column = "COURSE_NAME" type = "string"/>
+        <property name = "coordinator" column = "COORDINATOR" type = "string"/>
+        <property name = "obligatory" column = "OBLIGATORY" type = "boolean"/>
+        <property name = "lectureHours" column="LECTURE_HOURS" type="integer"/>
+        <property name = "classesHours" column="CLASSES_HOURS" type="integer"/>
+        <property name="ECTS" column="ECTS" type="integer"/>
+
+    </class>
+</hibernate-mapping>

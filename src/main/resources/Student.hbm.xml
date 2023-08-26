@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "org.example.Model.StudentModel.Student" table = "students">
+
+        <id name = "ID" type = "string" column = "STUDENT_ID">
+            <generator class="native"/>
+        </id>
+        <property name = "name" column = "STUDENT_NAME" type = "string"/>
+        <property name = "surname" column = "STUDENT_SURNAME" type = "string"/>
+        <property name = "fiedlOfStudy" column = "FIELD_OF_STUDY" type = "string"/>
+        <property name = "faculty" column="FACULTY" type="string"/>
+        <property name = "birthDate" column="BIRTH_DATE" type="date"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.usos.GroupsController"
+            prefHeight="$WINDOW_HEIGHT" prefWidth="$WINDOW_WIDTH">
+
+    <fx:define>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="600.0"/>
+        <Double fx:id="WINDOW_WIDTH" fx:value="800.0"/>
+        <Double fx:id="RIGHT_SCROLL_PANE_WIDTH" fx:value="390"/>
+        <Double fx:id="LEFT_SCROLL_PANE_WIDTH" fx:value="390"/>
+        <Double fx:id="LEFT_SCROLL_PANE_HEIGHT" fx:value="250"/>
+        <Double fx:id="BUTTON_PADDING_TOP" fx:value="10"/>
+        <Double fx:id="BUTTON_PADDING_BOTTOM" fx:value="10"/>
+    </fx:define>
+
+
+    <children>
+        <SplitPane prefWidth="$WINDOW_WIDTH" dividerPositions="0.5">
+
+            <AnchorPane>
+                <children>
+                    <VBox>
+                        <ScrollPane>
+                        <TableView fx:id="courseTable" prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+                            <columns>
+                                <TableColumn fx:id="courseNameColumn" text="Course name"/>
+                                <TableColumn fx:id="coordinatorColumn" text="Subject coordinator"/>
+                                <TableColumn fx:id="obligatoryColumn" text="Obligatory"/>
+                                <TableColumn fx:id="yourStatusColumn" text="Your status"/>
+                            </columns>
+                        </TableView>
+                        </ScrollPane>
+
+                        <Button text="Enroll in" fx:id="enrollInButton" prefWidth="$RIGHT_SCROLL_PANE_WIDTH"
+                         onAction="#onEnrollInClick"/>
+                        <Button text="Leave" fx:id="leaveButton" prefWidth="$RIGHT_SCROLL_PANE_WIDTH"
+                         onAction="#onLeaveClick"/>
+                        <Button text="Save courses info to CSV file" fx:id="saveCSVButton" prefWidth="$RIGHT_SCROLL_PANE_WIDTH"
+                                onAction="#onSaveClick"/>
+
+                    </VBox>
+                </children>
+            </AnchorPane>
+
+
+            <AnchorPane >
+                <children>
+                    <VBox>
+                        <ScrollPane prefHeight="$LEFT_SCROLL_PANE_HEIGHT" prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+                            <TableView fx:id="descriptionTable"  prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+                                <columns>
+                                    <TableColumn fx:id="propertyColumn" text="Property"/>
+                                    <TableColumn fx:id="descriptionColumn" text="Description"/>
+                                </columns>
+                            </TableView>
+                        </ScrollPane>
+
+                        <ScrollPane prefHeight="$LEFT_SCROLL_PANE_HEIGHT" prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+
+                        <TableView fx:id="groupTable" prefWidth="$RIGHT_SCROLL_PANE_WIDTH">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" text="Name" />
+                                <TableColumn fx:id="surnameColumn" text="Surname"/>
+                            </columns>
+                        </TableView>
+                        </ScrollPane>
+                    </VBox>
+                </children>
+            </AnchorPane>
+
+        </SplitPane>
+    </children>
+
+</AnchorPane>
